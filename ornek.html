@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">  <!-- Türkçe karakterlerin (ş, ğ, ü...) düzgün görünmesi için + meta etiketinin kapanışı yok-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Telefonda da düzgün görünsün diye -->
+    <title>Talha Koçak</title> <!-- Tarayıcı sekmesinde görünen yazı -->
+    <style> 
+        body{ 
+            background-color: #1a1a2e;
+            color:white;
+            font-family:Arial, sans-serif;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 40px 40px;
+        } 
+        h1{
+            color: #00ff9d;
+            font-size: 48px;
+        }
+        h2{
+            color: #60a5fa;
+        }
+        header{
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 1px solid #ffffff33;
+        }
+        img{
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #00ff9d;
+        }
+        .kart{
+            background-color: #16213e;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 4px solid #00ff9d;
+            flex:1;
+        }
+        .kart:hover{
+            border-left: 4px solid #60a5fa;
+            cursor: pointer;
+        }
+        .Kartlar{
+            display: flex;
+            gap: 20px;
+        }
+        footer{
+            text-align: center;
+            padding:40px 0;
+            margin-top: 40px;
+            border-top: 1px solid #ffffff33; 
+            color:94a3b8;
+        }
+        a{
+            color: #00ff9d;
+            text-decoration: none;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+        section {
+            margin: 40px 0;
+        }
+    </style>
+    <!--style içine CSS yazıyoruz body hedef aldığımız kısım background color arka plan rengi-->
+    <!--color yazı rengi font family yazı tipi-->
+    <!--text-align: center → Header içindeki her şeyi ortalar. border-bottom → Altına ince bir çizgi çeker. 1px kalınlık, solid düz çizgi, #ffffff33 yarı saydam beyaz.-->
+    <!--width / height → Resmin boyutu. border-radius: 50% → Köşeleri yuvarlat. 50% tam daire yapar.border → Resmin etrafına çerçeve. 3px kalınlık, solid düz, #00ff9d yeşil.-->
+    <!--padding → İçeriye boşluk. İçerik kenara yapışmasın. margin → Dışarıya boşluk. Kutular birbirine yapışmasın. border → Kutunun çerçevesi.-->
+    <!--text-decoration: none → Altındaki çizgiyi kaldırır. a:hover → Mouse üstüne gelince çizgi geri gelir. Kullanıcıya "bu tıklanabilir" hissini verir.-->
+</head>
+<body>
+   <header>
+    <h1>Talha Koçak</h1>
+    <img src="https://avatars.githubusercontent.com/u/9919?s=200" alt="Profil Fotoğrafı"> <!--img kapanışı yok. src resmin adresi. alt fotoğraf gözükmezse bu yazı görünür-->
+    <p>Machine Learning ve Web Geliştirme Öğrencisi</p>
+   </header> <!--Sayfanın üst kısmı. İsim, tanıtım buraya girer.-->
+   <main>
+    <section>
+      <h2>Hakkımda</h2>
+      <p>Merhaba ! İsmim Muhammed Talha Koçak. Machine Learning ve Web Geliştirme Alanlarında Projeler yapmak isteyen biriyim. Umarım Projelerimi Beğenirsiniz !!</p>
+    </section>  
+        <div class="Kartlar">
+            <div class="kart">
+                <h3>Mushroom Clasifier</h3>
+                <p>Mantarların zehirli olup olmadığını tahmin eder.</p>
+            </div>
+
+            <div class="kart">
+                <h3>Wine Quality Predictor</h3>
+                <p>Şarap kalitesini tahmin eder.</p>
+            </div>
+        </div>   
+   </main> <!--Sayfanın ana içeriği-->
+   <footer>
+    <a href="https://github.com">GitHub Profilim</a>
+   </footer> <!--Sayfanın alt kısmı. Linkler, telif hakkı buraya girer.-->
+</body>
+</html>
