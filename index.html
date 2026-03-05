@@ -52,7 +52,7 @@
             padding:40px 0;
             margin-top: 40px;
             border-top: 1px solid #ffffff33; 
-            color:94a3b8;
+            color: #94a3b8;
         }
         a{
             color: #00ff9d;
@@ -64,6 +64,23 @@
         section {
             margin: 40px 0;
         }
+        button{
+            background-color: #00ff9d;
+            color:#1a1a2e;
+            border: none;
+            padding:12px 24px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 20px 0;
+        }
+        button:hover{
+            background-color: #60a5fa;
+        }
+        .aydinlik{
+            background-color: #ffffff;
+            color:#1a1a2e;
+        }
     </style>
     <!--style içine CSS yazıyoruz body hedef aldığımız kısım background color arka plan rengi-->
     <!--color yazı rengi font family yazı tipi-->
@@ -74,6 +91,7 @@
 </head>
 <body>
    <header>
+    <button id="temaBtn">🌙 Karanlık Mod</button>
     <h1>Talha Koçak</h1>
     <img src="https://avatars.githubusercontent.com/u/9919?s=200" alt="Profil Fotoğrafı"> <!--img kapanışı yok. src resmin adresi. alt fotoğraf gözükmezse bu yazı görünür-->
     <p>Machine Learning ve Web Geliştirme Öğrencisi</p>
@@ -83,20 +101,72 @@
       <h2>Hakkımda</h2>
       <p>Merhaba ! İsmim Muhammed Talha Koçak. Machine Learning ve Web Geliştirme Alanlarında Projeler yapmak isteyen biriyim. Umarım Projelerimi Beğenirsiniz !!</p>
     </section>  
-        <div class="Kartlar">
-            <div class="kart">
-                <h3>Mushroom Clasifier</h3>
-                <p>Mantarların zehirli olup olmadığını tahmin eder.</p>
-            </div>
-
-            <div class="kart">
-                <h3>Wine Quality Predictor</h3>
-                <p>Şarap kalitesini tahmin eder.</p>
-            </div>
-        </div>   
+        <div class="Kartlar" id="kartContainer"></div>  
    </main> <!--Sayfanın ana içeriği-->
+   <button id="selamBtn">Bana Selam Ver</button>
+   <p id="mesaj"></p>
    <footer>
     <a href="https://github.com">GitHub Profilim</a>
    </footer> <!--Sayfanın alt kısmı. Linkler, telif hakkı buraya girer.-->
+  <script>
+    console.log("Merhaba Talha!")
+    let tiklama=0;
+    document.getElementById("selamBtn").addEventListener("click", function(){
+        tiklama+=1;
+        if(tiklama%2==1){
+            document.getElementById("mesaj").textContent="Merhaba!";
+        }
+        else{
+            document.getElementById("mesaj").textContent = "Hoşça kal!";
+        }
+    });
+    document.getElementById("temaBtn").addEventListener("click", function(){
+        document.body.classList.toggle("aydinlik");
+          if (this.textContent === "☀️ Aydınlık Mod") 
+            {
+                 this.textContent = "🌙 Karanlık Mod";
+            } 
+        else 
+            {
+             this.textContent = "☀️ Aydınlık Mod";
+            }
+    });
+    function selamVer(isim) {
+        alert("Merhaba! Ben " + isim);
+    }
+    function topla(a,b) {
+        return a+b;
+    }
+    let projects = [
+    {
+        ad: "Mushroom Classifier",
+        aciklama: "Mantarların zehirli olup olmadığını tahmin eder.",
+        teknoloji: "Python"
+    },
+    {
+        ad: "Wine Quality Predictor",
+        aciklama: "Şarap kalitesini tahmin eder.",
+        teknoloji: "Python"
+    }
+];
+
+    let kartlar = document.getElementById("kartContainer");
+
+for (let i = 0; i < projects.length; i++) {
+  let kart = document.createElement("div");
+  kart.className = "kart";
+  kart.innerHTML = `
+    <h3>${projects[i].ad}</h3>
+    <p>${projects[i].aciklama}</p>
+    <p>${projects[i].teknoloji}</p>
+  `;
+  kartlar.appendChild(kart);
+}
+  </script> 
 </body>
 </html>
+<!--button → Tıklanabilir buton.
+id="selamBtn" → Butona isim verdik, JS ile hedef alacağız.
+getElementById → "Bu id'ye sahip elemanı bul" demek.
+addEventListener("click") → "Tıklanınca şunu yap" demek.
+alert() → Ekrana popup çıkarır.-->
